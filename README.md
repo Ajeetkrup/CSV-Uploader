@@ -1,10 +1,10 @@
-# [CSV Upload]() - Fullstack Web Application with Node.js, Express, and MongoDB
+# [CSV Uploader]() - Fullstack Web Application with Node.js, Express, and MongoDB
 
 ## Features -
-1.This application uses csv-parse and multer library to parse the csv file, maximum of 8 MB size.
-2.Shows the list of all the files uploaded.
-3.The view to show each table with search bar.
-3.The search bar searches in frontend using regex in each row.
+1. This application uses csv-parse and multer library to parse the csv file, maximum of 8 MB size.
+2. Shows the list of all the files uploaded.
+3. The view to show each table with search bar.
+3. The search bar searches in frontend using regex in each row.
 
 This is a fullstack web application built with the Node.js runtime environment, Express.js framework, and MongoDB as the database. The application follows the Model-View-Controller (MVC) architecture pattern. 
 
