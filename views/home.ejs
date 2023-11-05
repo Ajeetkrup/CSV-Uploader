@@ -1,0 +1,70 @@
+<p class="path">CSV Upload / <%= title %></p>
+
+<section>
+    <div class="container">
+        <h1>Upload CSV</h1>
+        <label for="file">Choose file to Upload</label>
+        <br>
+        <input type="file" class="form-control" name="file" id="file" />
+        <button class="btn" id="submitFile">Upload</button>
+        <div class="warn">Maximum size 8 MB</div>
+      </div>
+
+    <div id="file-list">
+        <span>Files Uploaded</span>
+        <ul id="list">
+            <% if(data){ %>
+                <% data.forEach( file => { %>
+                    <li><a href='file/<%= file.id %>' target="_blank"><%= file.name.substring(0, 20) + '.csv' %></a></li>
+                <% }) %>
+            <% } %>
+        </ul>
+        <div id="note">
+            Note: Click on the above file names to see the file.
+        </div>
+    </div>
+</section>
+
+<script>
+    /*
+        Upload CSV file function
+        It takes csv file as input and if success it shows the success else error.
+    */
+    const fileInput = document.getElementById('file')
+    const submitFile = document.getElementById('submitFile')
+    let file = null
+
+    fileInput.addEventListener('change', function () {
+      file = this.files[0]
+    })
+
+    submitFile.addEventListener('click', function () {
+      if (!file || file.type !== 'text/csv') {
+        alert('Please choose a CSV file')
+        return
+      }
+
+      const fileSize = file.size;
+      if(fileSize > (1024*1024*8)){
+        alert('Plz, upload file less than 8 MB');
+        return;
+      }
+      const formData = new FormData()
+      formData.append('file', file)
+
+      fetch('/uploadfile/csv', {
+        method: 'POST',
+        body: formData
+      })
+      .then((response) => response.json())
+      .then(({ success, message }) => {
+        if (success) {
+          alert('The CSV is uploaded successfully.');
+          location.reload();
+        } else {
+          alert(message);
+        }
+      })
+      .catch((e) => alert(e.message))
+    })
+</script>

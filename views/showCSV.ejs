@@ -1,0 +1,55 @@
+<p class="path">CSV Upload / <%= fileName %>
+</p>
+
+<section>
+    <input type="text" id="search" placeholder="Search..." />
+    <table id="table" COLSPAN="20" CELLPADDING="10">
+        <thead>
+            <% if(data) { %>
+                <% for (const [key, value] of Object.entries(data[0])) { %>
+                    <th>
+                        <%= key %>
+                    </th>
+                    <% } %>
+                        <% } %>
+        </thead>
+        <tbody>
+            <% if(data){ %>
+                <% data.forEach(row=> { %>
+                    <tr>
+                        <% for (const [key, value] of Object.entries(row)) { %>
+                            <td>
+                                <%= value %>
+                            </td>
+                            <% } %>
+                    </tr>
+                    <% }) %>
+                        <% } else { %>
+                            <span>No data present</span>
+                            <% } %>
+        </tbody>
+    </table>
+</section>
+
+<script>
+    /*
+        searching using regex, where heading will not be searched
+    */
+    let rows = Array.from(document.querySelectorAll('#table tr:not(thead tr)'));
+    let searchInput = document.getElementById('search');
+
+    searchInput.addEventListener('keyup', function () {
+        let val = '^(?=.*\\b' + this.value.trim().split(/\s+/).join('\\b)(?=.*\\b') + ').*$';
+        let reg = new RegExp(val, 'i');
+
+        rows.forEach(function (row) {
+            let text = row.textContent.replace(/\s+/g, ' ');
+            if (!reg.test(text)) {
+                row.style.display = 'none';
+            } else {
+                row.style.display = '';
+            }
+        });
+    });
+
+</script>
