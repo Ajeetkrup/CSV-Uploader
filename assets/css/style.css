@@ -7,162 +7,165 @@
     font-family: "Poppins", sans-serif;
 }
 
-  body {
+body {
     background-color: #e7e7e7;
-  }
+}
 
-  header {
+header {
     color: white;
     padding: 1% 0;
-    box-shadow: 1px 2px  rgb(181, 181, 181);
-  }
+    box-shadow: 1px 2px rgb(181, 181, 181);
+}
 
-  .path {
+.path {
     font-weight: 400;
     padding: 1rem 1rem 0;
-  }
-  
-  .btn{
+}
+
+.btn {
     color: white;
     background-color: #00f1ffc4;
     padding: 6px;
     border: 1px solid transparent;
     border-radius: 6px;
     box-shadow: 1px 1px #909090
-  }
+}
 
-  .container {
+.container {
     width: 100%;
     margin: auto;
     text-align: center;
-  }
+}
 
-  .warn {
+.warn {
     font-weight: 300;
     font-size: 15px;
     color: green;
     font-family: cursive;
-  }
+}
 
-  #file-list {
+#file-list {
     margin: 0 0 0 2.5rem;
-  }
+}
 
-  #list {
+#list {
     margin: 1rem 0 0 2rem;
-  }
+}
 
-  ul li {
+ul li {
     list-style: none;
     position: relative;
     padding: 3px 0 2px 25px;
-  }
-  
-  ul li::before {
+}
+
+ul li::before {
     content: '*';
     position: absolute;
     top: 6px;
     left: 0;
-  }
-    
-  a {
+}
+
+a {
     display: inline-block;
     text-decoration: none;
     color: #9160ffc4;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
+}
 
-  #note {
+a:hover {
+    text-decoration: underline;
+}
+
+#note {
     font-size: 14px;
     font-weight: 400;
     font-family: system-ui;
     margin-top: 1rem;
-  }
+}
 
-  thead th,
-  tfoot th {
+thead th,
+tfoot th {
     font-family: "Rock Salt", cursive;
-  }
-  
-  th {
+}
+
+th {
     letter-spacing: 2px;
     padding: 3px;
-  }
-  
-  td {
+}
+
+td {
     letter-spacing: 1px;
     padding: 3px;
-  }
-  
-  tbody td {
-    text-align: center;
-  }
+}
 
-  tbody tr:nth-child(odd) {
+tbody td {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
     background-color: #1bfff0;
-  }
-  
-  tbody tr:nth-child(even) {
+}
+
+tbody tr:nth-child(even) {
     background-color: #79f3eb;
-  }
-  
-  table {
+}
+
+table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
     background-color: #00bdce;
-  }
-
-  #search{ 
-    margin-left: 15%; 
-    margin: 1%;
-    padding:15px; 
-    border-radius: 10px; 
-  } 
-
-  input[type=text] { 
-     width: 20%; 
-     border-color: rgb(255, 255, 255);
-     -webkit-transition: width 0.15s ease-in-out; 
-     transition: width 0.15s ease-in-out; 
-  } 
-
-  input[type=text]:focus { 
-    width: 34%; 
-    border-color: rgb(255, 255, 255);
-    box-shadow: inset 0px 0px 2px 2px rgb(93, 255, 68);
-  } 
-  
-.footer-padding {
-	padding-bottom: 60px;
 }
 
-.footer, header {
-	text-align: center;
-	bottom: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #1abc9c;
+#search {
+    margin-left: 15%;
+    margin: 1%;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 20%;
+    border-color: rgb(255, 255, 255);
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 34%;
+    border-color: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 2px 2px rgb(93, 255, 68);
+}
+
+.footer-padding {
+    padding-bottom: 60px;
+}
+
+.footer,
+header {
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1abc9c;
 }
 
 .footer p {
-	margin-top: 25px;
-	font-size: 12px;
-  color: #fff;
-  padding: 1rem 0;
+    margin-top: 25px;
+    font-size: 12px;
+    color: #fff;
+    padding: 1rem 0;
 }
- @media screen and (max-width: 300px) {
+
+@media screen and (max-width: 300px) {
     #file-list {
         margin: 3px;
         border: 1px solid black;
         overflow-x: scroll;
-      }
-      .container {
+    }
+
+    .container {
         margin: 5px;
         border: 1px solid black;
         overflow-x: scroll;
-      }
- }
+    }
+}
