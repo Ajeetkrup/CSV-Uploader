@@ -83,8 +83,7 @@ a:hover {
 }
 
 #body-sec {
-    max-height: 67vh;
-    overflow: scroll;
+    height: 67vh;
 }
 
 thead th,
