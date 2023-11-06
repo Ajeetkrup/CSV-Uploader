@@ -86,11 +86,19 @@ module.exports.showCSV = async function (req, res) {
         _id: new mongoose.Types.ObjectId(fileId),
       });
 
-      return res.render("showCSV", {
-        title:file[0].name,
-        fileName: file[0].name,
-        data: file[0].data || [],
-      });
+      if(file) {
+        return res.render("showCSV", {
+          title:file[0].name,
+          fileName: file[0].name,
+          data: file[0].data || [],
+        });
+      } else {
+        return res.render("showCSV", {
+          title:'',
+          fileName: '',
+          data: [],
+        });
+      }
     } catch (err) {
       console.log("Error while finding file - ", err);
       return res

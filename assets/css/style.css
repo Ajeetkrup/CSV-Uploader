@@ -82,6 +82,10 @@ a:hover {
     margin-top: 1rem;
 }
 
+#body-sec {
+    height: 67vh;
+}
+
 thead th,
 tfoot th {
     font-family: "Rock Salt", cursive;

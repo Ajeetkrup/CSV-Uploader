@@ -1,7 +1,7 @@
 <p class="path">CSV Uploader / <%= fileName %>
 </p>
 
-<section>
+<section id="body-sec">
     <input type="text" id="search" placeholder="Search..." />
     <table id="table" COLSPAN="20" CELLPADDING="10">
         <thead>
@@ -25,7 +25,7 @@
                     </tr>
                     <% }) %>
                         <% } else { %>
-                            <span>No data present</span>
+                            <span>No data present for this file. Plz, enter valid file Id.</span>
                             <% } %>
         </tbody>
     </table>
